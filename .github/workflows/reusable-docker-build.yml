@@ -137,6 +137,14 @@ jobs:
           provenance: true
           sbom: true
 
+      - name: Attest
+        uses: actions/attest-build-provenance@v2
+        id: attest
+        with:
+          subject-name: ${{ inputs.image-names }}
+          subject-digest: ${{ steps.docker_meta.outputs.digest }}
+          push-to-registry: true
+
       - name: Find comment for image tags
         uses: peter-evans/find-comment@v3.1.0
         if: github.event_name == 'pull_request' && inputs.comment-enable
