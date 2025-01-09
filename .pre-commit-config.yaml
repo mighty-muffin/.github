@@ -48,9 +48,6 @@ repos:
         stages: [pre-commit]
       - id: forbid-submodules
         stages: [pre-commit]
-      - id: no-commit-to-branch
-        args: ['--branch', '(main)', '--pattern', '^(?!(dev|((feat|fix|rel|renovate)\/[a-zA-Z0-9\-]+)$)).*']
-        stages: [pre-push]
       - id: mixed-line-ending
         stages: [pre-commit]
         args:
