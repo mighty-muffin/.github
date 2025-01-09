@@ -144,7 +144,7 @@ jobs:
 
       - name: Attest
         uses: actions/attest-build-provenance@v2
-        if: github.event_name == 'pull_request' && inputs.comment-enable
+        if: inputs.attest-enable
         id: attest
         with:
           subject-name: ${{ inputs.image-names }}
