@@ -76,7 +76,9 @@ on: # yamllint disable-line rule:truthy
         value: ${{ jobs.docker-build-push.outputs.image-tag }}
 
 permissions:
+  attestations: write
   contents: read
+  id-token: write
   packages: write
   pull-requests: write
 
