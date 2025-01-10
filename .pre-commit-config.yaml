@@ -8,7 +8,6 @@ ci:
   skip:
     - ggshield
     - no-commit-to-branch
-  autoupdate_schedule: monthly
 repos:
   - repo: meta
     hooks:
