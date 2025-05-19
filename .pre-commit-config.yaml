@@ -14,12 +14,12 @@ repos:
       # - id: check-hooks-apply
       - id: check-useless-excludes
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v4.1.0
+    rev: v4.7.2
     hooks:
       - id: commitizen
         stages: [commit-msg]
   - repo: https://github.com/gitguardian/ggshield
-    rev: v1.35.0
+    rev: v1.39.0
     hooks:
       - id: ggshield
         language_version: python3
@@ -72,7 +72,7 @@ repos:
       - id: fix-ligatures
         stages: [pre-commit]
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.43.0
+    rev: v0.45.0
     hooks:
       - id: markdownlint
         args:
@@ -80,7 +80,7 @@ repos:
           - .config/.markdown-lint.yml
         stages: [pre-commit]
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.35.1
+    rev: v1.37.1
     hooks:
       - id: yamllint
         args:
@@ -88,7 +88,7 @@ repos:
           - .config/.yaml-lint.yml
         stages: [pre-commit]
   - repo: https://github.com/rhysd/actionlint
-    rev: v1.7.6
+    rev: v1.7.7
     hooks:
       - id: actionlint
         stages: [pre-commit]
