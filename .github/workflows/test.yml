@@ -9,8 +9,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  ansible-lint:
-    name: Run ansible-lint
+  test:
+    name: Run test
     runs-on: ubuntu-24.04
     timeout-minutes: 5
 
