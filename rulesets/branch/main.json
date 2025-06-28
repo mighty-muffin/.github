@@ -36,6 +36,9 @@
       }
     },
     {
+      "type": "required_signatures"
+    },
+    {
       "type": "merge_queue",
       "parameters": {
         "check_response_timeout_minutes": 60,
