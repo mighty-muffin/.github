@@ -20,5 +20,5 @@ jobs:
 
   secret:
     name: Call Secret Scanning
-    uses: irishlab-io/.github/.github/workflows/reusable-secret.yml@main
+    uses: mighty-muffin/.github/.github/workflows/reusable-secret.yml@main
     secrets: inherit

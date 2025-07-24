@@ -1,0 +1,43 @@
+---
+name: Reusable - Repository Branch Checks
+on: # yamllint disable-line rule:truthy
+  workflow_call:
+
+permissions:
+  security-events: write
+  contents: read
+
+jobs:
+  repo-security:
+    name: Run branches checks
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0  # Fetch all branches
+
+      - name: List and check all branches for Gitflow compliance
+        run: |
+          git fetch --all
+          non_compliant=0
+          for branch in $(git for-each-ref --format='%(refname:short)' refs/remotes/origin/); do
+            # Remove origin/ prefix for local branch name
+            bname="${branch#origin/}"
+            # Skip HEAD and PR refs
+            if [[ "$bname" == "HEAD" || "$bname" == *"pull/"* ]]; then
+              continue
+            fi
+            if [[ "$bname" =~ ^(feature|bugfix|hotfix|release|support|develop|main|master)(\/.+)?$ ]]; then
+              echo "✅ $bname follows Gitflow nomenclature."
+            else
+              echo "::error::❌ Branch '$bname' does not follow Gitflow nomenclature!"
+              non_compliant=1
+            fi
+          done
+          if [ $non_compliant -ne 0 ]; then
+            echo "::error::Some branches do not follow Gitflow nomenclature."
+            exit 1
+          fi
