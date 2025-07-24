@@ -14,23 +14,23 @@ jobs:
 
   pinned-actions:
     name: Call Ensure SHA Pinned Actions
-    uses: mighty-muffin/.github/.github/workflows/reusable-ensure-pin-actions.yml@e43b5bf931b53ea6763d426608b70f8de1c45add # main
+    uses: mighty-muffin/.github/.github/workflows/reusable-ensure-pin-actions.yml@main
 
   repo-branch:
     name: Call Repository Branch Checks
-    uses: mighty-muffin/.github/.github/workflows/reusable-repo-branch.yml@e43b5bf931b53ea6763d426608b70f8de1c45add # main
+    uses: mighty-muffin/.github/.github/workflows/reusable-repo-branch.yml@main
 
   repo-file:
     name: Call Repository File Checks
-    uses: mighty-muffin/.github/.github/workflows/reusable-repo-file.yml@e43b5bf931b53ea6763d426608b70f8de1c45add # main
+    uses: mighty-muffin/.github/.github/workflows/reusable-repo-file.yml@main
 
   repo-sast:
     name: Call Repository SAST Checks
-    uses: mighty-muffin/.github/.github/workflows/reusable-repo-sast.yml@e43b5bf931b53ea6763d426608b70f8de1c45add # main
+    uses: mighty-muffin/.github/.github/workflows/reusable-repo-sast.yml@main
 
   repo-security:
     name: Call Repository Misconfigurations
-    uses: mighty-muffin/.github/.github/workflows/reusable-repo-security.yml@e43b5bf931b53ea6763d426608b70f8de1c45add # main
+    uses: mighty-muffin/.github/.github/workflows/reusable-repo-security.yml@main
 
     permissions:
       security-events: write

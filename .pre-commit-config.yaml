@@ -102,7 +102,7 @@ repos:
         entry: "pin-github-action ."
         args:
           - --allow
-          - "irishlab-io/*"
+          - "mighty-muffin/*"
         language: node
         additional_dependencies:
           - pin-github-action@3.4.0
