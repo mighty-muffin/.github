@@ -29,7 +29,7 @@ jobs:
     uses: mighty-muffin/.github/.github/workflows/reusable-repo-file.yml@main
 
   repo-ruleset:
-    name: Call Repository Misconfigurations
+    name: Call Repository Ruleset
     uses: mighty-muffin/.github/.github/workflows/reusable-repo-ruleset.yml@main
 
   repo-sast:
