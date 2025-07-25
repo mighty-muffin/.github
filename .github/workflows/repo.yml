@@ -16,26 +16,51 @@ permissions:
 
 jobs:
 
+  repo-security:
+    name: Check Repo Security
+    uses: mighty-muffin/.github/.github/workflows/reusable-repo-security.yml@main
+
   pinned-actions:
-    name: Call Ensure SHA Pinned Actions
+    needs:
+      - repo-security
+    name: Check Repo Workflow
     uses: mighty-muffin/.github/.github/workflows/reusable-ensure-pin-actions.yml@main
 
   repo-branch:
-    name: Call Repository Branch Checks
+    needs:
+      - repo-security
+    name: Check Repo Configuration
     uses: mighty-muffin/.github/.github/workflows/reusable-repo-branch.yml@main
 
   repo-file:
-    name: Call Repository File Checks
+    needs:
+      - repo-security
+    name: Check Repo Configuration
     uses: mighty-muffin/.github/.github/workflows/reusable-repo-file.yml@main
 
   repo-ruleset:
-    name: Call Repository Ruleset
+    needs:
+      - repo-security
+    name: Check Repo Configuration
     uses: mighty-muffin/.github/.github/workflows/reusable-repo-ruleset.yml@main
 
   repo-sast:
-    name: Call Repository SAST Checks
+    needs:
+      - pinned-actions
+      - repo-ruleset
+    name: Check Repo Toolchain
     uses: mighty-muffin/.github/.github/workflows/reusable-repo-sast.yml@main
 
-  repo-security:
-    name: Call Repository Misconfigurations
-    uses: mighty-muffin/.github/.github/workflows/reusable-repo-security.yml@main
+  repo-sca:
+    needs:
+      - pinned-actions
+      - repo-ruleset
+    name: Check Repo Toolchain
+    uses: mighty-muffin/.github/.github/workflows/reusable-repo-sca.yml@main
+
+  repo-secret:
+    needs:
+      - pinned-actions
+      - repo-ruleset
+    name: Check Repo Toolchain
+    uses: mighty-muffin/.github/.github/workflows/reusable-repo-secret.yml@main

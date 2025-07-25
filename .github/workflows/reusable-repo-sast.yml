@@ -3,15 +3,10 @@ name: Reusable - Repository SAST Checks
 on: # yamllint disable-line rule:truthy
   workflow_call:
 
-permissions:
-  security-events: write
-  contents: read
-
 jobs:
   repo-security:
     name: Run SAST checks
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
 
     steps:
       - name: Checkout
@@ -25,4 +20,4 @@ jobs:
             echo "::error file=.github/workflows/main.yml::❌ main.yml does not call the SAST action (reusable-repo-sast)!"
           else
             echo "✅ main.yml calls the SAST action."
-          firesum
+          fi
