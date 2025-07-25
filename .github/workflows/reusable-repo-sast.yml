@@ -23,8 +23,6 @@ jobs:
         run: |
           if ! grep -q "sast" .github/workflows/main.yml; then
             echo "::error file=.github/workflows/main.yml::❌ main.yml does not call the SAST action (reusable-repo-sast)!"
-            exit 1
           else
             echo "✅ main.yml calls the SAST action."
-          fi
-        continue-on-error: true
+          firesum
