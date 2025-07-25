@@ -22,13 +22,11 @@ jobs:
           rules=$(gh api repos/${{ github.repository }}/rulesets --jq '.[] | select(.enforcement=="active" and .target=="branch") | {name: .name, enforcement: .enforcement, bypass_actors: .bypass_actors}')
           if [ -z "$rules" ]; then
             echo "::error repository configuration::❌No active branch protection rulesets found."
-            exit 1
           else
             echo "$rules"
           fi
         env:
           GH_TOKEN: ${{ github.token }}
-        continue-on-error: true
 
       - name: List all active tag protection rulesets
         id: tag_rulesets
@@ -37,10 +35,8 @@ jobs:
           rules=$(gh api repos/${{ github.repository }}/rulesets --jq '.[] | select(.enforcement=="active" and .target=="tag") | {name: .name, enforcement: .enforcement, bypass_actors: .bypass_actors}')
           if [ -z "$rules" ]; then
             echo "::error repository configuration::❌No active tag protection rulesets found."
-            exit 1
           else
             echo "$rules"
           fi
         env:
           GH_TOKEN: ${{ github.token }}
-        continue-on-error: true
