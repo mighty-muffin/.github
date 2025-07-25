@@ -28,6 +28,10 @@ jobs:
     name: Call Repository File Checks
     uses: mighty-muffin/.github/.github/workflows/reusable-repo-file.yml@main
 
+  repo-ruleset:
+    name: Call Repository Misconfigurations
+    uses: mighty-muffin/.github/.github/workflows/reusable-repo-ruleset.yml@main
+
   repo-sast:
     name: Call Repository SAST Checks
     uses: mighty-muffin/.github/.github/workflows/reusable-repo-sast.yml@main
