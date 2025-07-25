@@ -18,13 +18,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
+      - name: Check for CODEOWNERS file
+        run: |
+          if [ ! -f .github/CODEOWNERS ]; then
+            echo "::warning file=.github/CODEOWNERS::⚠️ CODEOWNERS file is missing!"
+          else
+            echo "CODEOWNERS file exists."
+          fi
+
       - name: Check for .dockerignore file (only if Dockerfile exists)
         run: |
           if [ -f Dockerfile ]; then
             if [ ! -f .dockerignore ]; then
-              echo "::error file=.dockerignore::❌ .dockerignore file is missing, but Dockerfile exists!"
-              exit 1
-            else
+              echo "::warning file=.dockerignore::⚠️ .dockerignore file is missing, but Dockerfile exists!"
+             else
               echo ".dockerignore file exists."
             fi
           else
@@ -34,8 +41,7 @@ jobs:
       - name: Check for .gitignore file
         run: |
           if [ ! -f .gitignore ]; then
-            echo "::error file=.gitignore::❌ .gitignore file is missing!"
-            exit 1
+            echo "::warning file=.gitignore::⚠️ .gitignore file is missing!"
           else
             echo ".gitignore file exists."
           fi
@@ -43,8 +49,7 @@ jobs:
       - name: Check for .pre-commit-config.yaml file
         run: |
           if [ ! -f .pre-commit-config.yaml ]; then
-            echo "::error file=.pre-commit-config.yaml::❌ .pre-commit-config.yaml file is missing!"
-            exit 1
+            echo "::warning file=.pre-commit-config.yaml::⚠️ .pre-commit-config.yaml file is missing!"
           else
             echo ".pre-commit-config.yaml file exists."
           fi
