@@ -21,12 +21,14 @@ jobs:
           echo "Active branch protection rulesets:"
           rules=$(gh api repos/${{ github.repository }}/rulesets --jq '.[] | select(.enforcement=="active" and .target=="branch") | {name: .name, enforcement: .enforcement, bypass_actors: .bypass_actors}')
           if [ -z "$rules" ]; then
-            echo "::warning::No active branch protection rulesets found."
+            echo "::error repository configuration::❌No active branch protection rulesets found."
+            exit 1
           else
             echo "$rules"
           fi
         env:
           GH_TOKEN: ${{ github.token }}
+        continue-on-error: true
 
       - name: List all active tag protection rulesets
         id: tag_rulesets
@@ -34,30 +36,11 @@ jobs:
           echo "Active tag protection rulesets:"
           rules=$(gh api repos/${{ github.repository }}/rulesets --jq '.[] | select(.enforcement=="active" and .target=="tag") | {name: .name, enforcement: .enforcement, bypass_actors: .bypass_actors}')
           if [ -z "$rules" ]; then
-            echo "::warning::No active tag protection rulesets found."
+            echo "::error repository configuration::❌No active tag protection rulesets found."
+            exit 1
           else
             echo "$rules"
           fi
         env:
           GH_TOKEN: ${{ github.token }}
-
-      - name: Summary of active rulesets
-        run: |
-          echo "### Branch Protection Rulesets" >> $GITHUB_STEP_SUMMARY
-          rules=$(gh api repos/${{ github.repository }}/rulesets --jq '.[] | select(.enforcement=="active" and .target=="branch") | "- \(.name) (\(.enforcement))"')
-          if [ -z "$rules" ]; then
-            echo "No active branch protection rulesets found." >> $GITHUB_STEP_SUMMARY
-          else
-            echo "$rules" >> $GITHUB_STEP_SUMMARY
-          fi
-
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### Tag Protection Rulesets" >> $GITHUB_STEP_SUMMARY
-          rules=$(gh api repos/${{ github.repository }}/rulesets --jq '.[] | select(.enforcement=="active" and .target=="tag") | "- \(.name) (\(.enforcement))"')
-          if [ -z "$rules" ]; then
-            echo "No active tag protection rulesets found." >> $GITHUB_STEP_SUMMARY
-          else
-            echo "$rules" >> $GITHUB_STEP_SUMMARY
-          fi
-        env:
-          GH_TOKEN: ${{ github.token }}
+        continue-on-error: true
