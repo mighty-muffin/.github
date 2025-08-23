@@ -32,12 +32,12 @@ repos:
         stages:
           - commit-msg
   - repo: https://github.com/gitguardian/ggshield
-    rev: v1.41.0
+    rev: v1.42.0
     hooks:
       - id: ggshield
         name: "security | scan for secrets"
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+    rev: v6.0.0
     hooks:
       - id: check-added-large-files
         name: "git | block large files"
