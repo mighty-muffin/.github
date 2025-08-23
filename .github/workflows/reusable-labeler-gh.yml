@@ -1,0 +1,33 @@
+---
+name: Reusable - GH Labeler
+
+on: # yamllint disable-line rule:truthy
+  workflow_call:
+    inputs:
+      configuration_file:
+        description: GH Labeler configuration
+        required: false
+        default: ".github/labeler.yml"
+        type: string
+  workflow_dispatch:
+
+jobs:
+  labeler:
+    name: Run GH labler
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+
+      - name: Labeler
+        uses: actions/labeler@8558fd74291d67161a8a78ce36a881fa63b766a9 # v5.0.0
+        with:
+          configuration-path: ${{ inputs.configuration_file }}
+
+      - name: Sync Labels
+        uses: EndBug/label-sync@52074158190acb45f3077f9099fea818aa43f97a # v2.3.3
+        with:
+          config-file: .github/labels.yml
+          delete-other-labels: true
