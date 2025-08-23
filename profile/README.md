@@ -4,9 +4,9 @@ Sometimes, it's useful to explore.
 
 ## Repo-Project Dashboard
 
-| Repository  | CI  | CD  |
-|------------ |---- |---- |
-| .github     |     |     |
+| Repository   | CI                                                                                                                                                                          | CD  | Comments                                     |
+|------------- |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |---- |--------------------------------------------- |
+| .github     | [![CI - Main](https://github.com/mighty-muffin/.github/actions/workflows/main.yml/badge.svg)](https://github.com/mighty-muffin/.github/actions/workflows/main.yml)           |     | Repo for Org reusable workflows and config   |
 
 ## JS-Project Dashboard
 
@@ -16,7 +16,7 @@ Sometimes, it's useful to explore.
 | js-infra     | [![CI - Main](https://github.com/mighty-muffin/js-infra/actions/workflows/main.yml/badge.svg)](https://github.com/mighty-muffin/js-infra/actions/workflows/main.yml)        |     | Repo to manage my IaC for my JS app          |
 | js-manifest  | [![CI - Main](https://github.com/mighty-muffin/js-manifest/actions/workflows/main.yml/badge.svg)](https://github.com/mighty-muffin/js-manifest/actions/workflows/main.yml)  |     | Repo for GitOps workflo deploying my JS app  |
 
-## Bank-Project Dashboard
+## Banking-Project Dashboard
 
 | Repository        | CI                                                                                                                                                                                    | CD  | Comments                                          |
 |------------------ |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |---- |-------------------------------------------------- |
