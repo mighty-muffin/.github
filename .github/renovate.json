@@ -3,10 +3,35 @@
   "dependencyDashboardTitle": "Renovate Dashboard",
   "extends": [
     ":disableRateLimiting",
-    "docker:enableMajor",
-    ":timezone(America/New_York)",
     ":semanticCommits",
-    "config:recommended"
+    ":timezone(America/New_York)",
+    "config:recommended",
+    "docker:enableMajor",
+    "group:allNonMajor"
+  ],
+  "packageRules": [
+    {
+      "groupName": "All non-major dependencies",
+      "groupSlug": "all-minor-patch",
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ]
+    },
+    {
+      "groupName": "GitHub Actions minor and patch updates",
+      "groupSlug": "github-actions-minor-patch",
+      "matchPackagePatterns": [
+        "^github-actions/.+"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ]
+    }
   ],
   "pre-commit": {
     "enabled": true

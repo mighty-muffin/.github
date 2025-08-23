@@ -1,5 +1,5 @@
 ---
-name: Schedule - Main
+name: CI - Cron
 
 on: # yamllint disable-line rule:truthy
   schedule:
