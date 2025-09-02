@@ -1,0 +1,5 @@
+repository:
+  name: .github
+  description: Repo for Org reusable workflows and config
+  homepage: https://github.com/mighty-muffin/.github
+  has_wiki: false
