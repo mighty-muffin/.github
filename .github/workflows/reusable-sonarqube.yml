@@ -33,7 +33,7 @@ jobs:
           fetch-depth: 0
 
       - name: Connect Tailscale VPN
-        uses: tailscale/github-action@84a3f23bb4d843bcf4da6cf824ec1be473daf4de # v3.2.3
+        uses: tailscale/github-action@6cae46e2d796f265265cfcf628b72a32b4d7cade # v3.3.0
         with:
           authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
           tags: "tag:ci"
@@ -41,7 +41,7 @@ jobs:
           use-cache: "true"
 
       - name: Run SAST - SonarQube
-        uses: SonarSource/sonarqube-scan-action@1a6d90ebcb0e6a6b1d87e37ba693fe453195ae25 # v5.3.1
+        uses: SonarSource/sonarqube-scan-action@2f77a1ec69fb1d595b06f35ab27e97605bdef703 # v5.3.2
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
