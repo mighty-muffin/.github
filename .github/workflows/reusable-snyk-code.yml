@@ -21,7 +21,7 @@ jobs:
           fetch-depth: 0
 
       - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/node@de2dda699bf7276d103ed6a72a5bc5a1871ad658 # v0.5.0
+        uses: snyk/actions/node@9adf32b1121593767fc3c057af55b55db032dc04 # v1.0.0
 
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
