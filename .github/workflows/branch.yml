@@ -20,5 +20,5 @@ jobs:
 
   secret:
     name: Call Secret Scanning
-    uses: mighty-muffin/.github/.github/workflows/reusable-secret.yml@main
+    uses: mighty-muffin/.github/.github/workflows/reusable-gitguardian.yml@main
     secrets: inherit
