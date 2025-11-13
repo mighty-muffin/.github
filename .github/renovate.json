@@ -6,15 +6,14 @@
     ":semanticCommits",
     ":timezone(America/New_York)",
     "config:recommended",
-    "docker:enableMajor",
-    "group:allNonMajor"
+    "docker:enableMajor"
   ],
   "packageRules": [
     {
-      "groupName": "All non-major dependencies",
-      "groupSlug": "all-minor-patch",
-      "matchPackagePatterns": [
-        "*"
+      "groupName": "GitHub Actions minor and patch updates",
+      "groupSlug": "github-actions-minor-patch",
+      "matchManagers": [
+        "github-actions"
       ],
       "matchUpdateTypes": [
         "minor",
@@ -22,10 +21,48 @@
       ]
     },
     {
-      "groupName": "GitHub Actions minor and patch updates",
-      "groupSlug": "github-actions-minor-patch",
-      "matchPackagePatterns": [
-        "^github-actions/.+"
+      "groupName": "Python minor and patch updates",
+      "groupSlug": "python-minor-patch",
+      "matchManagers": [
+        "pip_requirements",
+        "pip_setup",
+        "pipenv",
+        "poetry"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ]
+    },
+    {
+      "groupName": "npm minor and patch updates",
+      "groupSlug": "npm-minor-patch",
+      "matchManagers": [
+        "npm"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ]
+    },
+    {
+      "groupName": "Helm minor and patch updates",
+      "groupSlug": "helm-minor-patch",
+      "matchManagers": [
+        "helm-values",
+        "helmfile"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ]
+    },
+    {
+      "groupName": "Docker minor and patch updates",
+      "groupSlug": "docker-minor-patch",
+      "matchManagers": [
+        "dockerfile",
+        "docker-compose"
       ],
       "matchUpdateTypes": [
         "minor",
