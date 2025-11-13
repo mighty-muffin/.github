@@ -13,23 +13,23 @@
     {
       "groupName": "All non-major dependencies",
       "groupSlug": "all-minor-patch",
-      "matchPackagePatterns": [
-        "*"
-      ],
       "matchUpdateTypes": [
         "minor",
         "patch"
+      ],
+      "matchPackageNames": [
+        "*"
       ]
     },
     {
       "groupName": "GitHub Actions minor and patch updates",
       "groupSlug": "github-actions-minor-patch",
-      "matchPackagePatterns": [
-        "^github-actions/.+"
-      ],
       "matchUpdateTypes": [
         "minor",
         "patch"
+      ],
+      "matchPackageNames": [
+        "/^github-actions/.+/"
       ]
     }
   ],
