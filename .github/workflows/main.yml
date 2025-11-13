@@ -24,6 +24,4 @@ jobs:
       - pre-commit
     name: Call Secret Scanning
     uses: mighty-muffin/.github/.github/workflows/reusable-gitguardian.yml@main
-
-    secrets:
-      GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}
+    secrets: inherit
