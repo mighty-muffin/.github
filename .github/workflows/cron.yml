@@ -10,6 +10,11 @@ concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
   cancel-in-progress: true
 
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
 jobs:
 
   pre-commit:
@@ -25,6 +30,6 @@ jobs:
     secrets:
       GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}
 
-  repo-security:
+  renovate:
     name: Call Renovate Dependency Update
     uses: mighty-muffin/.github/.github/workflows/reusable-renovate.yml@main
