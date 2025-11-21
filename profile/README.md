@@ -19,6 +19,13 @@ Sometimes, it's useful to explore.
 | [insecure-net](https://github.com/mighty-muffin/insecure-net)        | [![CI - Main](https://github.com/mighty-muffin/insecure-net/actions/workflows/main.yml/badge.svg)](https://github.com/mighty-muffin/insecure-net/actions/workflows/main.yml)        | [![CD - Production](https://github.com/mighty-muffin/insecure-net/actions/workflows/cd.yml/badge.svg)](https://github.com/mighty-muffin/insecure-net/actions/workflows/cd.yml)        |
 | [insecure-python](https://github.com/mighty-muffin/insecure-python)  | [![CI - Main](https://github.com/mighty-muffin/insecure-python/actions/workflows/main.yml/badge.svg)](https://github.com/mighty-muffin/insecure-python/actions/workflows/main.yml)  | [![CD - Production](https://github.com/mighty-muffin/insecure-python/actions/workflows/cd.yml/badge.svg)](https://github.com/mighty-muffin/insecure-python/actions/workflows/cd.yml)  |
 
+## GenAi
+
+| Repository   | CI                                                                                                                                                                          | CD  | Comments                                     |
+|------------- |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |---- |--------------------------------------------- |
+| [ttt]([https://github.com/mighty-muffin/docker-python-hw](https://github.com/mighty-muffin/ttt))     | [![CI - Main](https://github.com/mighty-muffin/ttt/actions/workflows/main.yml/badge.svg)](https://github.com/mighty-muffin/ttt/actions/workflows/main.yml)           |     | TTT Repo  |
+| [genAIxp]([https://github.com/mighty-muffin/httpenv-app](https://github.com/mighty-muffin/genAIxp))     | [![CI - Main](https://github.com/mighty-muffin/genAIxp/actions/workflows/main.yml/badge.svg)](https://github.com/mighty-muffin/genAIxp/actions/workflows/main.yml)           |     | genAIxp Repo  |
+
 ## Have a muffin
 
 <!-- Or stay hungry whatev -->
