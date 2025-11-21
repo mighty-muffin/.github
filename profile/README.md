@@ -23,8 +23,8 @@ Sometimes, it's useful to explore.
 
 | Repository   | CI                                                                                                                                                                          | CD  | Comments                                     |
 |------------- |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |---- |--------------------------------------------- |
-| [ttt]([https://github.com/mighty-muffin/docker-python-hw](https://github.com/mighty-muffin/ttt))     | [![CI - Main](https://github.com/mighty-muffin/ttt/actions/workflows/main.yml/badge.svg)](https://github.com/mighty-muffin/ttt/actions/workflows/main.yml)           |     | TTT Repo  |
-| [genAIxp]([https://github.com/mighty-muffin/httpenv-app](https://github.com/mighty-muffin/genAIxp))     | [![CI - Main](https://github.com/mighty-muffin/genAIxp/actions/workflows/main.yml/badge.svg)](https://github.com/mighty-muffin/genAIxp/actions/workflows/main.yml)           |     | genAIxp Repo  |
+| [ttt]([https://github.com/mighty-muffin/ttt](https://github.com/mighty-muffin/ttt))     | [![CI - Main](https://github.com/mighty-muffin/ttt/actions/workflows/main.yml/badge.svg)](https://github.com/mighty-muffin/ttt/actions/workflows/main.yml)           |     | TTT Repo  |
+| [genAIxp]([https://github.com/mighty-muffin/genAIxp](https://github.com/mighty-muffin/genAIxp))     | [![CI - Main](https://github.com/mighty-muffin/genAIxp/actions/workflows/main.yml/badge.svg)](https://github.com/mighty-muffin/genAIxp/actions/workflows/main.yml)           |     | genAIxp Repo  |
 
 ## Have a muffin
 
